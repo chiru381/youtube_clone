@@ -4,6 +4,7 @@ import Video from "../models/Video.js";
 
 export const addComment = async (req, res, next) => {
   const newComment = new Comment({ ...req.body });
+  // console.log(newComment);
   try {
     const savedComment = await newComment.save();
     res.status(200).send(savedComment);

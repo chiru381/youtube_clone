@@ -9,6 +9,7 @@ export const signup = async (req, res, next) => {
         const hash = bcrypt.hashSync(req.body.password, salt);
         const newUser = new User({ ...req.body, password: hash });
 
+        // console.log(newUser);
         await newUser.save()
         res.status(200).send("User has been created successfully")
     } catch (error) {
