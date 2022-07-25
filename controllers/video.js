@@ -68,7 +68,7 @@ export const addView = async (req, res) => {
   }
 }
 
-export const random = async (req, res) => {
+export const random = async (req, res, next) => {
   try {
     //size 1 in postman 1hit 1 video printed. for suppose 40 1 hit postman 40 videos printed.
     const videos = await Video.aggregate([{ $sample: { size: 40 }}])

@@ -22,6 +22,7 @@ router.put("/view/:id", addView)
 
 router.get("/trend", trend)
 
+//get generate random videos
 router.get("/random", random)
 
 router.get("/sub", sub)

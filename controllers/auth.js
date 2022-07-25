@@ -36,11 +36,13 @@ export const signin = async (req, res, next) => {
     }
 };
 
-export const googleAuth = async (req, res) => {
+export const googleAuth = async (req, res, next) => {
     try {
         const user = await User.findOne({ email: req.body.email });
+        console.log(user, '.....1');
         if (user) {
           const token = jwt.sign({ id: user._id }, process.env.JWT);
+          console.log(token, '...2');
           res
             .cookie("access_token", token, {
               httpOnly: true,
@@ -52,8 +54,11 @@ export const googleAuth = async (req, res) => {
             ...req.body,
             fromGoogle: true,
           });
+          console.log(newUser, '....3');
           const savedUser = await newUser.save();
+          console.log(savedUser, '...4');
           const token = jwt.sign({ id: savedUser._id }, process.env.JWT);
+          console.log(token, '...5');
           res
             .cookie("access_token", token, {
               httpOnly: true,
