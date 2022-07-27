@@ -129,9 +129,11 @@ const Video = () => {
     const fetchData = async () => {
       try {
         const videoRes = await axios.get(`/videos/find/${path}`);
+        console.log(videoRes, '......videos responsee')
         const channelRes = await axios.get(
           `/users/find/${videoRes.data.userId}`
         );
+        console.log(channelRes, '......channel responsee')
         setChannel(channelRes.data);
         dispatch(fetchSuccess(videoRes.data));
       } catch (err) {}

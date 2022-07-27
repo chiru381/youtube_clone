@@ -112,6 +112,10 @@ const Menu = ({ darkMode, setDarkMode }) => {
             Subscriptions
           </Item>
         </Link>
+        <Item onClick={() => setDarkMode(!darkMode)}>
+          <SettingsBrightnessOutlinedIcon />
+          {darkMode ? "Light" : "Dark"} Mode
+        </Item>
         <Hr />
         <Item>
           <VideoLibraryOutlinedIcon />
@@ -162,6 +166,8 @@ const Menu = ({ darkMode, setDarkMode }) => {
           Live
         </Item>
         <Hr />
+
+
         <Item>
           <SettingsOutlinedIcon />
           Settings
@@ -173,10 +179,6 @@ const Menu = ({ darkMode, setDarkMode }) => {
         <Item>
           <HelpOutline />
           Help
-        </Item>
-        <Item onClick={() => setDarkMode(!darkMode)}>
-          <SettingsBrightnessOutlinedIcon />
-          {darkMode ? "Light" : "Dark"} Mode
         </Item>
       </Wrapper>
     </Container>

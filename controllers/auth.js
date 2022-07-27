@@ -36,6 +36,7 @@ export const signin = async (req, res, next) => {
     }
 };
 
+//firebase user uid  -  QFaY550nl3Ql0x4rvj8Qr19S3Jt2
 export const googleAuth = async (req, res, next) => {
     try {
         const user = await User.findOne({ email: req.body.email });

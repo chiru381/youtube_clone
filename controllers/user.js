@@ -70,7 +70,7 @@ export const unsubscribe = async (req, res, next) => {
 }
 
 export const like = async (req, res, next) => {
-    const id = req.user.id;
+    const id = req.body.id;
   const videoId = req.params.videoId;
   try {
     //video collection inside like the video userId.  if like the video removed in disliked list userId.
